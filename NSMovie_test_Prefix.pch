@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'NSMovie_test' target in the 'NSMovie_test' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
