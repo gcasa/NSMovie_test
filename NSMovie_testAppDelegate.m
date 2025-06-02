@@ -13,14 +13,22 @@
 @synthesize window;
 @synthesize movieView;
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	// Insert code here to initialize your application 
-	NSURL *filename = [[NSBundle mainBundle] 
-						URLForResource: @"big_buck_bunny"
-						withExtension: @"mp4"];
-	NSMovie *movie = [[NSMovie alloc] initWithURL: filename byReference: NO]; 
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+{
+  // Insert code here to initialize your application 
+  NSURL *filename = [[NSBundle mainBundle]
+			    URLForResource: @"big_buck_bunny"
+			     withExtension: @"mp4"];
+  NSMovie *movie = [[NSMovie alloc] initWithURL: filename
+				    byReference: NO];
+
+  NSLog(@"movieView = %@", [self movieView]);
+  NSLog(@"movie = %@", movie);
 	
-	[[self movieView] setMovie: movie];
-	[[self movieView] start: self];
+  [[self movieView] setMovie: movie];
+  [[self movieView] start: self];
+
+  NSLog(@"file types: %@", [NSMovie movieUnfilteredFileTypes]);
+  NSLog(@"pasteboard types: %@", [NSMovie movieUnfilteredPasteboardTypes]);
 }
 @end
