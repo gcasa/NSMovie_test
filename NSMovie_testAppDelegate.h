@@ -13,6 +13,6 @@
 	NSMovieView *movieView;
 }
 
-@property (assign) IBOutlet NSWindow *window;
-@property (assign) IBOutlet NSMovieView *movieView;
+@property (strong) IBOutlet NSWindow *window;
+@property (strong) IBOutlet NSMovieView *movieView;
 @end
